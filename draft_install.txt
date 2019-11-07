@@ -1,0 +1,19 @@
+#Centos 7
+
+yum groupinstall 'Development Tools'
+wget https://github.com/ideawu/ssdb/archive/stable-1.9.5.zip (homologado Zimbra, mas podem ser utilizadas versões superiores)
+unzip stable-1.9.5.zip
+cd ssdb-stable-1.9.5/
+
+make
+make install
+vim ssdb.conf (ajustado conforme o repositório)
+./ssdb-server -d ssdb.conf
+
+useradd -s /sbin/nologin -d /usr/local/ssdb ssdb
+
+/opt/zimbra/bin/zmmigrateattrs -r ssdb:server:8888
+
+/opt/zimbra/bin/zmmigrateattrs ssdb:server:8888
+
+zmprov mcf zimbraEphemeralBackendURL ssdb:server:8888
