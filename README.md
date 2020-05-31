@@ -1,5 +1,5 @@
 # zimbra-ssdb
-SSDB Package for Zimbra 8.8
+SSDB Package for Zimbra 8.8 and Zimnra 9
 
 (https://zimbra.github.io/adminguide/latest/#ephemeral_data)
 
