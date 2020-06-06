@@ -14,7 +14,7 @@ chown ssdb.ssdb /usr/local/ssdb -R
 
 
 cd /usr/local/ssdb
-vim ssdb.conf (ajustado conforme o repositório)
+sed -e 's@ip:.*@ip: 0.0.0.0@' -e 's@level:.*@level: info@' -i ssdb.conf (ajustado conforme está no repositório se preferir copiar)
 ./ssdb-server -d ssdb.conf #teste apenas, foi criado o service file
 
 /opt/zimbra/bin/zmmigrateattrs -r ssdb:server:8888
