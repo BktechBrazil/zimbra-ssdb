@@ -1,3 +1,4 @@
+#Created by Fabio S. Schmidt - fabio@respirandolinux.com.br
 [Unit]
 Description=SSDB server daemon
 After=syslog.target network.target
