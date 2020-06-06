@@ -7,10 +7,15 @@ cd ssdb-stable-1.9.5/
 
 make
 make install
-vim ssdb.conf (ajustado conforme o repositório)
-./ssdb-server -d ssdb.conf
+
 
 useradd -s /sbin/nologin -d /usr/local/ssdb ssdb
+chown ssdb.ssdb /usr/local/ssdb -R
+
+
+cd /usr/local/ssdb
+vim ssdb.conf (ajustado conforme o repositório)
+./ssdb-server -d ssdb.conf #teste apenas, foi criado o service file
 
 /opt/zimbra/bin/zmmigrateattrs -r ssdb:server:8888
 
