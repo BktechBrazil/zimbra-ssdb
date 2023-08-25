@@ -17,8 +17,8 @@ cd /usr/local/ssdb
 sed -e 's@ip:.*@ip: 0.0.0.0@' -e 's@level:.*@level: info@' -i ssdb.conf (ajustado conforme está no repositório se preferir copiar)
 ./ssdb-server -d ssdb.conf #teste apenas, foi criado o service file
 
-/opt/zimbra/bin/zmmigrateattrs -r ssdb:server:8888
+/opt/zimbra/bin/zmmigrateattrs -r ssdb:127.0.0.1:8888
 
-/opt/zimbra/bin/zmmigrateattrs ssdb:server:8888
+/opt/zimbra/bin/zmmigrateattrs ssdb:127.0.0.1:8888
 
-zmprov mcf zimbraEphemeralBackendURL ssdb:server:8888
+zmprov mcf zimbraEphemeralBackendURL ssdb:127.0.0.1:8888
